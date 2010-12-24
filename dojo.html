@@ -7,18 +7,11 @@
 <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
 
   <script>
-  
-  toRoman = function(n)
-  {
-	  if(n == 1)
-	     return "i";
-	  else if (n==2)
-	  	return "ii";
-	  else if (n==3)
-	  	return "iii";
-	  else if (n==4)
-	  	return "iv";
-  }
+
+      toRoman = function(n) {
+          var array = new Array("", "i", "ii", "iii", "iv", "v","vi","vii","viii","ix");
+          return array[n];
+      }
   
   
   $(document).ready(function(){
@@ -26,13 +19,14 @@
     
     
 test("a basic test example", function() {
-	equals("i",toRoman(1),"Verifica se com 1 retorna i");
-	
-	equals("ii",toRoman(2),"Verifica se com 2 retorna ii");
-	
+	equals("i",toRoman(1),"Verifica se com 1 retorna i");	
+	equals("ii",toRoman(2),"Verifica se com 2 retorna ii");	
 	equals("iii",toRoman(3),"Verifica se com 3 retorna iii");
-	
-	equals("iv",toRoman(4),"Verifica se com 4 retorna iv");
+	equals("iv", toRoman(4), "Verifica se com 4 retorna iv");
+	equals("v", toRoman(5), "Verifica se com 5 retorna v");
+	equals("vi", toRoman(6), "Verifica se com 6 retorna vi");
+	equals("vii", toRoman(7), "Verifica se com 7 retorna vii");
+	equals("viii", toRoman(8), "Verifica se com 8 retorna viii");
 });
 
 
